@@ -1,0 +1,29 @@
+CRUD GENERATOR
+php artisan crud:generate Posts --fields_from_file="helpers/crud.json" --view-path=admin --controller-namespace=App\\Http\\Controllers\\Admin --route-group=admin --form-helper=html
+
+RELATION ONE TO ONE
+public function FunctionName()
+{
+    return $this->hasOne(Model::class, 'foreign_key', 'key');
+}
+public function FunctionName()
+{
+    return $this->belongsTo(Model::class, 'foreign_key', 'key');
+}
+
+RELATION ONE TO MANY
+public function FunctionName()
+{
+    return $this->hasMany(Model::class, 'foreign_key', 'key');
+}
+public function FunctionName()
+{
+    return $this->belongsTo(Model::class, 'foreign_key', 'key');
+}
+
+RELATION MANY TO MANY
+public function Users()
+{
+    return $this->belongsToMany(Model::class, 'pivot_table', 'model_id', 'model_foreign_id')->whereNull('pivot_table.deleted_at')
+        ->withTimestamps();
+}

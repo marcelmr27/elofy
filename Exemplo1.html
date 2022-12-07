@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exemplo 1</title>
+</head>
+
+<body class="antialiased">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            var word = 'Reviver';
+            var split_char = word.toLowerCase().split('');
+            var split_char_size = split_char.length;
+            var palindroma = true;
+            for (var i = 0; i < parseInt(split_char_size / 2); i++) {
+                if (split_char[i] !== split_char[split_char_size - 1 - i]) {
+                    palindroma = false;
+                }
+            }
+
+            if (palindroma) {
+                alert('A palavra é palíndroma');
+            } else {
+                alert('A palavra não é palíndroma');
+            }
+        });
+    </script>
+</body>
+
+</html>
